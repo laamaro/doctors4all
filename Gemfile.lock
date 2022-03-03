@@ -238,6 +238,9 @@ GEM
 PLATFORMS
   arm64-darwin-21
 
+  x86_64-linux
+
+
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.4)
