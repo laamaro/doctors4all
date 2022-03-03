@@ -6,6 +6,7 @@ class TreatmentsController < ApplicationController
   end
 
   def show
+    @treatment = Treatment.find(params[:id])
   end
 
   def new
