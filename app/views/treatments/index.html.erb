@@ -1,6 +1,12 @@
 <h1>Treatments Available</h1>
+==================
+COLOCAR EM CARDS:
+==================
+<ul>
+>>>>>>> master
   <% @treatments.each do |treatment| %>
-    <%= link_to treatment.specialty, treatment_path(treatment) %>
-    <%= treatment.address %>
-    <%= treatment.price %>
+    <li><%= link_to treatment.specialty, treatment_path(treatment)%>:
+    <%= treatment.address %>,
+    R$ <%= treatment.price %></li>
   <% end %>
+</ul>
