@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="treatment">
+        <table class="table">
+        <tbody>
+          <tr>
+            <th scope="row">Specialty</th>
+            <td><%= @treatment.specialty %></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td><%= @treatment.price %></td>
+          </tr>
+          <tr>
+            <th scope="row">User</th>
+            <td><%= "#{@treatment.user.first_name.capitalize} #{@treatment.user.last_name.capitalize}" %></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

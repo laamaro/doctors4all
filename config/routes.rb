@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :treatments
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   resources :treatments do
     resources :appointments, only: [ :new, :create ]
   end
