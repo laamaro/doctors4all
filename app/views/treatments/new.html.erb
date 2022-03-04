@@ -1,14 +1,14 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create a new treatment</h3>
+      <div class="bg-white form-card p-3 shadow">
+        <h3>Criar um novo tratamento:</h3>
         <%= simple_form_for @treatment do |f| %>
-          <%= f.input :specialty %>
-          <%= f.input :address %>
-          <%= f.input :price %>
-          <%= f.input :availability %>
-          <%= f.submit class: 'btn btn-flat' %>
+          <%= f.input :specialty, :label => "Especialidade", class: "form-control form-control-lg", type: "text" %>
+          <%= f.input :address, :label => "Endereço" %>
+          <%= f.input :price, :label => "Preço" %>
+          <%= f.input :availability, :label => "Disponibilidade" %>
+          <%= f.submit :create, :label => "Criar", class: 'btn-medium' %>
         <% end %>
       </div>
     </div>
