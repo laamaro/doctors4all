@@ -1,5 +1,5 @@
 require 'date'
-require 'faker'
+
 
 
 first_names = %w(maria jose joao paulo laura herman michelle andreia paulao pedro)
