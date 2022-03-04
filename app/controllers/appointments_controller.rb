@@ -9,7 +9,7 @@ class AppointmentsController < ApplicationController
     @treatment = Treatment.find(params[:treatment_id])
     @appointment.treatment = @treatment
     if @appointment.save
-      redirect_to treatment_path(@treatment)
+      redirect_to root_path
     else
       render :new
     end
