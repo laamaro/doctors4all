@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Edit your Treatment</h2>
+  <%= simple_form_for @treatment do |f| %>
+    <%= f.input :specialty %>
+    <%= f.input :price %>
+    <%= f.input :availability %>
+    <%= f.submit 'Salve Treatment', class: 'btn btn-primary' %>
+  <% end %>
+</div>
