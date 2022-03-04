@@ -7,6 +7,7 @@ class TreatmentsController < ApplicationController
 
   def show
     @treatment = Treatment.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def new

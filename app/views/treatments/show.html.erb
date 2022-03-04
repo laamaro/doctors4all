@@ -5,20 +5,32 @@
         <table class="table">
         <tbody>
           <tr>
-            <th scope="row">Specialty</th>
+            <th scope="row">Especialidade</th>
             <td><%= @treatment.specialty %></td>
           </tr>
           <tr>
-            <th scope="row">Price</th>
+            <th scope="row">Preço da consulta</th>
             <td><%= @treatment.price %></td>
           </tr>
           <tr>
-            <th scope="row">User</th>
+            <th scope="row">Médico</th>
             <td><%= "#{@treatment.user.first_name.capitalize} #{@treatment.user.last_name.capitalize}" %></td>
+          </tr>
+          <tr>
+            <th scope="row">Endereço</th>
+            <td><%= @treatment.address %></td>
           </tr>
         </tbody>
         </table>
       </div>
     </div>
+  </div>
+  <div class="container">
+    <h1>Marque sua consulta: </h1>
+    <%= simple_form_for [ @treatment, @appointment ] do |f| %>
+      <%= f.input :date %>
+      <%= f.submit "Marcar consulta", class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to 'Voltar', root_path, class: "btn btn-outline-secondary" %>
   </div>
 </div>
