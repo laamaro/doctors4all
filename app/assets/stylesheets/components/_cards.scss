@@ -1,0 +1,18 @@
+.treatment-flex{
+  gap: 10px;
+  padding: 0;
+  margin: 10px;
+}
+.treatment-card{
+  background-color: #fff;
+  max-width: 18rem;
+  padding: 0;
+  margin: 0;
+}
+
+.treatment-card-image{
+  background-image: url('https://images.unsplash.com/photo-1622253692010-333f2da6031d?');
+  background-size: cover;
+  width: 100%;
+  height: 180px;
+}
