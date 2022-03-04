@@ -25,12 +25,20 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-8">
+      <% if @treatment.user == current_user %>
+        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-primary' %>
+      <% else %>
+        <h3>Marque sua consulta: </h3>
+        <%= simple_form_for [ @treatment, @appointment ] do |f| %>
+        <%= f.input :date %>
+        <%= f.submit "Marcar consulta", class: "btn btn-primary" %>
+        <% end %>
+      <% end %>
+    </div>
   <div class="container">
-    <h1>Marque sua consulta: </h1>
-    <%= simple_form_for [ @treatment, @appointment ] do |f| %>
-      <%= f.input :date %>
-      <%= f.submit "Marcar consulta", class: "btn btn-primary" %>
-    <% end %>
+
     <%= link_to 'Voltar', root_path, class: "btn btn-outline-secondary" %>
   </div>
 </div>

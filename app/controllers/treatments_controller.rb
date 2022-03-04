@@ -1,5 +1,6 @@
 class TreatmentsController < ApplicationController
   before_action :set_treatment, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     @treatments = Treatment.all
