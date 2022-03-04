@@ -32,8 +32,8 @@
       <% else %>
         <h3>Marque sua consulta: </h3>
         <%= simple_form_for [ @treatment, @appointment ] do |f| %>
-        <%= f.input :date %>
-        <%= f.submit "Marcar consulta", class: "btn btn-outline-primary", data: {confirm: "Sua consulta foi marcada!"} %>
+          <%= f.input :date %>
+          <%= f.submit "Marcar consulta", class: "btn btn-outline-primary" %>
         <% end %>
       <% end %>
     </div>
