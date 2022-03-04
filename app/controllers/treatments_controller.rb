@@ -15,6 +15,7 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
+    @treatment.user = current_user
     @treatment.save
 
     redirect_to treatments_path(@treatment)
