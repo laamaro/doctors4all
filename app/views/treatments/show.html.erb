@@ -21,4 +21,11 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-8">
+      <% if @treatment.user == current_user %>
+        <%= link_to 'Edit',  edit_treatment_path(@treatment), class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
 </div>
