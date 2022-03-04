@@ -1,19 +1,48 @@
-  <h1>Doctors4All</h1>
-  <div class="row">
-    <div class="col-6">
-    <%= form_tag root_path, method: :get do %>
-      <%= text_field_tag :query,
-                          params[:query],
-                          class: "form-control",
-                          placeholder: "Find a treatment"%>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-      <p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1624727828489-a1e03b79bba8);">
+  <div class="container">
+    <h1>Agende agora sua consulta</h1>
+    <p>Mais de 800 especialistas para te ajudar</p>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <%= form_tag root_path, method: :get do %>
+            <div class="col mt-3 mb-2">
+              <%= text_field_tag :specialty,
+                                params[:specialty],
+                                class: "form-control",
+                                placeholder: "Especialidade"%>
+            </div>
+            <div class="col mt-3 mb-2">
+              <%= submit_tag "Pesquisar", class: "btn btn-primary mt-2" %>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
+</div>
+</div>
 
-  <% @treatments.each do |treatment| %>
-    <%= link_to treatment.specialty, treatment_path(treatment) %>
-    <%= treatment.address %>
-    <%= treatment.price %>
-  <% end %>
+<div class="second-part">
+  <div class="row treatment-flex">
+    <% @treatments.each do |treatment| %>
+
+        <div class="treatment-card">
+          <div class="treatment-card-image"></div>
+          <div class="treatment-card-content">
+            <div class="treatment-card-title">
+              <h4><%= treatment.specialty.capitalize %></h4>
+            </div>
+            <p><%= treatment.address %></p>
+            <div>
+              <p><%= "R$ #{treatment.price}"%></p>
+            </div>
+            <div>
+              <%= link_to "Detalhes", treatment_path(treatment), class: "btn btn-primary" %>
+            </div>
+          </div>
+        </div>
+
+    <% end %>
+  </div>
+</div>

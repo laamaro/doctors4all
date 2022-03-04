@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   def home
     @treatments = Treatment.all
-    if params[:query]
-      @treatments = @treatments.where(specialty: params[:query])
+    if params[:specialty]
+      @treatments = @treatments.where(specialty: params[:specialty].downcase)
     end
   end
 end
