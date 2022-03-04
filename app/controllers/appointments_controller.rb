@@ -1,8 +1,8 @@
 class AppointmentsController < ApplicationController
-  def new
-    @treatment = Treatment.find(params[:treatment_id])
-    @appointment = Appointment.new
-  end
+  # def new
+  #   @treatment = Treatment.find(params[:treatment_id])
+  #   @appointment = Appointment.new
+  # end
 
   def create
     @appointment = Appointment.new(appointment_params)

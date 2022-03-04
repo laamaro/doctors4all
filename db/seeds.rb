@@ -9,8 +9,8 @@ specialties = %w(cardiologia endocrionologia ortopedia neurologia psicologia gin
 
 first_names.each_with_index do |name, i|
   User.create!(
-    email: Faker::Internet.email,
-    password: Faker::Internet.password,
+    email: "#{name}@gmail.com",
+    password: "123123",
     first_name: name,
     last_name: last_names[i]
   )

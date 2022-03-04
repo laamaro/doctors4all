@@ -8,6 +8,7 @@ class TreatmentsController < ApplicationController
 
   def show
     @treatment = Treatment.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def new
@@ -16,6 +17,7 @@ class TreatmentsController < ApplicationController
 
   def create
     @treatment = Treatment.new(treatment_params)
+    @treatment.user = current_user
     @treatment.save
 
     redirect_to treatments_path(@treatment)
