@@ -41,7 +41,7 @@ class TreatmentsController < ApplicationController
   private
 
   def treatment_params
-    params.require(:treatment).permit(:address, :specialty, :availability, :price)
+    params.require(:treatment).permit(:address, :specialty, :start_date, :end_date, :price)
   end
 
   def set_treatment
