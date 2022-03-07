@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container m-5">
   <div class="row">
     <div class="col-8">
       <div class="treatment">
@@ -20,6 +20,10 @@
             <th scope="row">Endereço</th>
             <td><%= @treatment.address %></td>
           </tr>
+          <tr>
+            <th scope="row">Disponibilidade</th>
+            <td>Entre: <%= @treatment.start_date %> e <%= @treatment.end_date %></td>
+          </tr>
         </tbody>
         </table>
       </div>
@@ -29,16 +33,21 @@
     <div class="col-8">
       <% if @treatment.user == current_user %>
         <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-primary' %>
+        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn btn-danger' %>
       <% else %>
         <h3>Marque sua consulta: </h3>
         <%= simple_form_for [ @treatment, @appointment ] do |f| %>
           <%= f.input :date %>
           <%= f.submit "Marcar consulta", class: "btn btn-outline-primary" %>
+          <% @appointment.errors&.each do |attr, msg| %>
+            <%= msg %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
   <div class="container">
 
     <%= link_to 'Voltar', root_path, class: "btn btn-outline-secondary" %>
+
   </div>
 </div>

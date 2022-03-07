@@ -1,12 +1,36 @@
-<h1>Treatments Available</h1>
-==================
-COLOCAR EM CARDS:
-==================
-<ul>
->>>>>>> master
-  <% @treatments.each do |treatment| %>
-    <li><%= link_to treatment.specialty, treatment_path(treatment)%>:
-    <%= treatment.address %>,
-    R$ <%= treatment.price %></li>
-  <% end %>
-</ul>
+<div class="container py-5 mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="treatment_container">
+      <h1>Seus tratamentos:</h1>
+      <table class="table table-striped d-flex justify-content-center">
+        <thead>
+          <tr>
+            <th>Especialidade</th>
+            <th>Preço</th>
+            <th>Data da consulta</th>
+            <th>Local</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @treatments.each do |treatment| %>
+          <tr>
+            <td><%= treatment.specialty %></td>
+            <td>R$ <%= treatment.price %></td>
+            <td><%= treatment.availability %></td>
+            <td><%= treatment.address %></td>
+            <td>
+              <button class="btn-medium">Editar</button>
+            </td>
+            <td>
+              <button class="btn-medium">Deletar</button>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      </div>
+   </div>
+  </div>
+</div>

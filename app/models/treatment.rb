@@ -2,5 +2,6 @@ class Treatment < ApplicationRecord
   belongs_to :user
   has_many :appointments
 
-  validates :address, :availability, :specialty, :price, :user, presence: true
+  has_one_attached :photo
+  validates :address, :start_date, :end_date, :specialty, :price, :user, presence: true
 end
