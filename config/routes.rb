@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :treatments do
     resources :appointments, only: [ :new, :create ]
   end
+
+  resources :appointments, only: [:show]
 end
