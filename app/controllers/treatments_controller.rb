@@ -3,7 +3,7 @@ class TreatmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    @treatments = Treatment.all
+    @treatments = current_user.treatments
   end
 
   def show
@@ -20,7 +20,7 @@ class TreatmentsController < ApplicationController
     @treatment.user = current_user
     @treatment.save
 
-    redirect_to treatments_path(@treatment)
+    redirect_to treatments_path
   end
 
   def edit
