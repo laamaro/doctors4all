@@ -1,5 +1,5 @@
 require 'date'
-require 'faker'
+
 
 
 first_names = %w(maria jose joao paulo laura herman michelle andreia paulao pedro)
@@ -17,11 +17,13 @@ first_names.each_with_index do |name, i|
 end
 
 100.times do |i|
+  date = Date.today+rand(100)
   Treatment.create!(
   address: "São Paulo #{i + 10}",
   specialty: specialties.sample,
   price: rand(100..500),
-  availability: Date.today+rand(100),
+  start_date: date,
+  end_date: date + 30,
   user_id: rand(1..10)
 )
 end

@@ -3,7 +3,8 @@
   <%= simple_form_for @treatment do |f| %>
     <%= f.input :specialty %>
     <%= f.input :price %>
-    <%= f.input :availability %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
     <%= f.submit 'Salve Treatment', class: 'btn btn-primary' %>
   <% end %>
 </div>

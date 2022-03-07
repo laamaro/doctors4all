@@ -14,6 +14,7 @@ class AppointmentsController < ApplicationController
     else
       render 'treatments/show'
     end
+
   end
 
   # def show
