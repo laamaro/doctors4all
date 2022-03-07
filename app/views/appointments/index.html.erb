@@ -2,26 +2,22 @@
   <div class="row">
     <div class="col-12">
       <div class="treatment_container">
-      <h1>Seus tratamentos:</h1>
+      <h1>Suas Consultas:</h1>
       <table class="table table-striped justify-content-center">
         <thead>
           <tr>
             <th>Especialidade</th>
-            <th>Preço</th>
             <th>Data da consulta</th>
             <th>Local</th>
-            <th>Médico</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-        <% @treatments.each do |treatment| %>
+        <% @appointments.each do |appointment| %>
           <tr>
-            <td><%= treatment.specialty %></td>
-            <td>R$ <%= treatment.price %></td>
-            <td><%= treatment.start_date %></td>
-            <td><%= treatment.address %></td>
-            <td><%= treatment.user_id %></td>
+            <td><%= appointment.treatment.specialty.capitalize %></td>
+            <td><%= appointment.date %></td>
+            <td><%= appointment.treatment.address %></td>
             <td>
               <button class="btn-medium">Editar</button>
             </td>

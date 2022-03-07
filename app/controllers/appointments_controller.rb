@@ -4,6 +4,11 @@ class AppointmentsController < ApplicationController
   #   @appointment = Appointment.new
   # end
 
+  def index
+    @appointments = Appointment.all
+    # @appointments = Appointment.where(user_id: params[current_user.id])
+  end
+
   def create
     @appointment = Appointment.new(appointment_params)
     @treatment = Treatment.find(params[:treatment_id])
@@ -17,10 +22,9 @@ class AppointmentsController < ApplicationController
 
   end
 
-  # def show
-  #   @treatment = Treatment.find(params[:treatment_id])
-  #   @appointment.treatment = @treatment
-  # end
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
 
   private
 
