@@ -4,6 +4,12 @@ class TreatmentsController < ApplicationController
 
   def index
     @treatments = Treatment.all
+    @markers = @treatments.geocoded.map do |treatment|
+      {
+        lat: treatment.latitude,
+        lng: treatment.longitude
+      }
+    end
   end
 
   def show
