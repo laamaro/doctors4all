@@ -26,6 +26,7 @@
               <% if current_user.treatments.any? %>
               <%= link_to "Seus tratamentos", "/treatments", class: "dropdown-item" %>
               <% end %>
+              <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

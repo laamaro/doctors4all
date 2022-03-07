@@ -1,11 +1,8 @@
 require 'date'
 
-
-
 first_names = %w(maria jose joao paulo laura herman michelle andreia paulao pedro)
 last_names = %w(silva santos pieroni passalacqua loosli amaro teste1 teste2 teste3 teste4)
 specialties = %w(cardiologia endocrionologia ortopedia neurologia psicologia ginecologia pediatria)
-
 
 first_names.each_with_index do |name, i|
   User.create!(
