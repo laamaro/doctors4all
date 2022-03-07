@@ -9,15 +9,15 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto" data-action="scroll@window->navbar#updateNavbar">
         <% if user_signed_in? %>
-          <li class="nav-item active">
+          <li class="nav-item active" data-navbar-target="li">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" data-navbar-target="li">
             <%= link_to "Mensagens", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" data-navbar-target="li">
             <%= link_to "Oferte um Tratamento!", new_treatment_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
