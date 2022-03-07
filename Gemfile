@@ -26,6 +26,11 @@ gem 'devise'
 # Adding simple_form gem:
 gem 'simple_form'
 
+#Adding cloudinary gem:
+gem 'cloudinary', '~> 1.16.0'
+
+#Installing dotenv gem:
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -35,12 +40,12 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'autoprefixer-rails', '10.2.5'
 gem 'font-awesome-sass'
-gem 'simple_form'
+
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'dotenv-rails'
+
 
   # faker gem
   gem 'faker'
