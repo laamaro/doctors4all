@@ -37,12 +37,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_205146) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", force: :cascade do |t|
-    t.bigint "blob_id", null: false
-    t.string "variation_digest", null: false
-    t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-  end
-
   create_table "appointments", force: :cascade do |t|
     t.date "date", null: false
     t.bigint "user_id", null: false
@@ -79,7 +73,6 @@ ActiveRecord::Schema.define(version: 2022_03_05_205146) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "treatments"
   add_foreign_key "appointments", "users"
   add_foreign_key "treatments", "users"

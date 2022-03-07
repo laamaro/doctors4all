@@ -31,7 +31,7 @@
     <% @treatments.each do |treatment| %>
 
         <div class="treatment-card">
-          <div class="treatment-card-image"><<%= cl_image_tag treatment.photo.key %>/div>
+          <div class="treatment-card-image" style="background-image: url(<%= treatment.photo.attached? ? cl_image_path(treatment.photo.key) : 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?'%>)"></div>
           <div class="treatment-card-content">
             <div class="treatment-card-title">
               <h4><%= treatment.specialty.capitalize %></h4>
