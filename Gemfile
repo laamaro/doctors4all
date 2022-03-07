@@ -26,6 +26,9 @@ gem 'devise'
 # Adding simple_form gem:
 gem 'simple_form'
 
+#Adding Geocoder gem:
+gem "geocoder"
+
 #Adding cloudinary gem:
 gem 'cloudinary', '~> 1.16.0'
 

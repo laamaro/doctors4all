@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     resources :appointments, only: [ :new, :create ]
   end
 
-  resources :appointments, only: [:show]
+  resources :appointments, only: [:show, :destroy, :index]
 end
+
+
