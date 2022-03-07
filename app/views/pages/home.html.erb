@@ -2,7 +2,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1624727828489-a1e03b79bba8);">
   <div class="container">
     <h1>Agende agora sua consulta</h1>
-    <p>Mais de 800 especialistas para te ajudar</p>
+    <p><span data-controller="typed-js"></span></p>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -23,12 +23,15 @@
 </div>
 </div>
 
+<div>
+</div>
+
 <div class="second-part">
   <div class="row treatment-flex">
     <% @treatments.each do |treatment| %>
 
         <div class="treatment-card">
-          <div class="treatment-card-image"></div>
+          <div class="treatment-card-image"><<%= cl_image_tag treatment.photo.key %>/div>
           <div class="treatment-card-content">
             <div class="treatment-card-title">
               <h4><%= treatment.specialty.capitalize %></h4>
@@ -44,5 +47,6 @@
         </div>
 
     <% end %>
+
   </div>
 </div>

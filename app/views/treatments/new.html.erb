@@ -8,6 +8,7 @@
           <%= f.input :address, :label => "Endereço", placeholder: "Rua, n°, bairro, cidade" %>
           <%= f.input :price, :label => "Preço" %>
           <%= f.input :availability, :label => "Disponibilidade" %>
+          <%= f.input :photo, as: :file, placeholder:"Image", :label => 'Image file:'%>
           <%= f.submit :create, :label => "Criar", class: 'btn-medium' %>
         <% end %>
       </div>
