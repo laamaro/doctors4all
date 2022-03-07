@@ -1,4 +1,4 @@
-<div class="container m-5">
+<div class="appointment-container container">
   <div class="row">
     <div class="col-8">
       <div class="treatment">
@@ -6,11 +6,11 @@
         <tbody>
           <tr>
             <th scope="row">Especialidade</th>
-            <td><%= @treatment.specialty %></td>
+            <td><%= @treatment.specialty.capitalize %></td>
           </tr>
           <tr>
             <th scope="row">Preço da consulta</th>
-            <td><%= @treatment.price %></td>
+            <td>R$ <%= @treatment.price %></td>
           </tr>
           <tr>
             <th scope="row">Médico</th>
@@ -22,23 +22,23 @@
           </tr>
           <tr>
             <th scope="row">Disponibilidade</th>
-            <td>Entre: <%= @treatment.start_date %> e <%= @treatment.end_date %></td>
+            <td>De <%= @treatment.start_date %> a <%= @treatment.end_date %></td>
           </tr>
         </tbody>
         </table>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-8">
       <% if @treatment.user == current_user %>
-        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-primary' %>
-        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn btn-danger' %>
+        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-outline-secondary' %>
+        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn btn-outline-danger' %>
       <% else %>
-        <h3>Marque sua consulta: </h3>
+        <h5>Marque agora sua consulta: </h5>
         <%= simple_form_for [ @treatment, @appointment ] do |f| %>
-          <%= f.input :date %>
-          <%= f.submit "Marcar consulta", class: "btn btn-outline-primary" %>
+          <%= f.input :date, label: 'Data' %>
+          <%= f.submit "Marcar consulta", class: "btn btn-outline-secondary" %>
           <% @appointment.errors&.each do |attr, msg| %>
             <%= msg %>
           <% end %>
@@ -46,8 +46,6 @@
       <% end %>
     </div>
   <div class="container">
-
     <%= link_to 'Voltar', root_path, class: "btn btn-outline-secondary" %>
-
   </div>
 </div>

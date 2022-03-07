@@ -1,6 +1,23 @@
 <div class="m-5">
-Você receberá um e-mail com os detalhes da sua consulta!
-<% @treatment.appointments.each do |appoitment|%>
-  <%= appointment.date %>
-<% end %>
+  <div class="appointment-container container">
+  <h1>Sua Consulta:</h1>
+    <table class="table table-striped justify-content-center">
+      <thead>
+        <tr>
+          <th>Especialidade</th>
+          <th>Data da consulta</th>
+          <th>Local</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= @appointment.treatment.specialty.capitalize %></td>
+          <td><%= @appointment.date %></td>
+          <td><%= @appointment.treatment.address %></td>
+        </tr>
+      </tbody>
+    </table>
+  <h5>Você receberá um e-mail com os detalhes da sua consulta!</h5>
+  <%= link_to 'Ver todas as consultas marcadas',  appointments_path(@appointments), class: 'btn btn-outline-dark' %>
+  </div>
 </div>
