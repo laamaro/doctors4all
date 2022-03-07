@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container m-5">
   <div class="row">
     <div class="col-8">
       <div class="treatment">
@@ -37,10 +37,10 @@
         <h3>Marque sua consulta: </h3>
         <%= simple_form_for [ @treatment, @appointment ] do |f| %>
           <%= f.input :date %>
-          <% until :date.between?(:start_date, :end_date) %>
-              <p> Data nao disponivel </p>
-          <% end %>
           <%= f.submit "Marcar consulta", class: "btn btn-outline-primary" %>
+          <% @appointment.errors&.each do |attr, msg| %>
+            <%= msg %>
+          <% end %>
         <% end %>
       <% end %>
     </div>
