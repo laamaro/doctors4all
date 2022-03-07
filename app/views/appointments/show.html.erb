@@ -1,3 +1,6 @@
 <div class="m-5">
 Você receberá um e-mail com os detalhes da sua consulta!
+<% @treatment.appointments.each do |appoitment|%>
+  <%= appointment.date %>
+<% end %>
 </div>

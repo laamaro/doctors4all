@@ -16,10 +16,9 @@ class AppointmentsController < ApplicationController
     end
   end
 
-  # def show
-  #   @treatment = Treatment.find(params[:treatment_id])
-  #   @appointment.treatment = @treatment
-  # end
+  def show
+    @treatment.appointment = @appoitment
+  end
 
   private
 
