@@ -8,12 +8,18 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @treatment = Treatment.find(params[:treatment_id])
     @appointment.treatment = @treatment
+    @appointment.user = current_user
     if @appointment.save
-      redirect_to treatment_path(@treatment)
+      redirect_to appointment_path(@appointment), notice: "Sua consulta foi marcada!"
     else
-      render :new
+      render 'treatments/show'
     end
   end
+
+  # def show
+  #   @treatment = Treatment.find(params[:treatment_id])
+  #   @appointment.treatment = @treatment
+  # end
 
   private
 
