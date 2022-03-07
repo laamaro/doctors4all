@@ -10,5 +10,3 @@ Rails.application.routes.draw do
 
   resources :appointments, only: [:show, :destroy, :index]
 end
-
-
