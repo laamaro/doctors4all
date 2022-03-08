@@ -32,13 +32,13 @@
   <div class="row mt-5">
     <div class="col-8">
       <% if @treatment.user == current_user %>
-        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-outline-secondary' %>
-        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn btn-outline-danger' %>
+        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn-medium' %>
+        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn-medium-red' %>
       <% else %>
         <h5>Marque agora sua consulta: </h5>
         <%= simple_form_for [ @treatment, @appointment ] do |f| %>
           <%= f.input :date, label: 'Data' %>
-          <%= f.submit "Marcar consulta", class: "btn btn-outline-secondary" %>
+          <%= f.submit "Marcar consulta", class: "btn-medium" %>
           <% @appointment.errors&.each do |attr, msg| %>
             <%= msg %>
           <% end %>
@@ -46,6 +46,6 @@
       <% end %>
     </div>
   <div class="container">
-    <%= link_to 'Voltar', treatments_path, class: "btn btn-outline-secondary" %>
+    <%= link_to 'Voltar', treatments_path, class: "btn-medium-branco" %>
   </div>
 </div>
