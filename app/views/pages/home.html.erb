@@ -14,7 +14,7 @@
                                 placeholder: "Especialidade"%>
             </div>
             <div class="col mt-3 mb-2">
-              <%= submit_tag "Pesquisar", class: "btn btn-primary mt-2" %>
+              <%= submit_tag "Pesquisar", class: "btn-medium" %>
             </div>
           <% end %>
       </div>
@@ -33,16 +33,17 @@
             <div class="treatment-card-title">
               <h4><%= treatment.specialty.capitalize %></h4>
             </div>
-            <p><%= treatment.address %></p>
+            <div>
+              <p><%= treatment.address %></p>
+            </div>
             <div>
               <p><%= "R$ #{treatment.price}"%></p>
             </div>
             <div>
-              <%= link_to "Detalhes", treatment_path(treatment), class: "btn btn-primary" %>
+              <%= link_to "Detalhes", treatment_path(treatment), class: "btn-medium" %>
             </div>
           </div>
         </div>
-
     <% end %>
   <div style="width: 100%; height: 600px;" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
