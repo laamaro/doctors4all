@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .second-part{
-  background-color: #F2F7F2;
+  background-color: #f2f5f7;
 
   .btn-medium {
     color: #ffffff;
@@ -29,6 +29,7 @@
 
 .btn-medium-border:hover {
   background-color: #333d64;
+  color: #fff;
 }
 
 .btn-login {
@@ -36,4 +37,14 @@
   color: #041559;
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.btn-medium-branco {
+  text-decoration: none;
+}
+
+.btn-medium-branco:hover {
+  text-decoration: none;
+  background-color: #1b2963;
+  color: #fff;
 }
