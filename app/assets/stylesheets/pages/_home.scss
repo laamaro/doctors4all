@@ -11,6 +11,10 @@
     opacity: 0.6;
     background-color: #041761;
   }
+
+  .btn-medium:hover {
+    background-color: #333d64;
+  }
 }
 
 .btn-medium {
@@ -20,4 +24,16 @@
   border-radius: 50px;
   font-weight: lighter;
   background-color: #041761;
+  text-decoration: none;
+}
+
+.btn-medium-border:hover {
+  background-color: #333d64;
+}
+
+.btn-login {
+  text-decoration: none;
+  color: #041559;
+  margin-left: 20px;
+  margin-top: 10px;
 }
