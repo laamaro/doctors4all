@@ -14,7 +14,7 @@
                                 placeholder: "Especialidade"%>
             </div>
             <div class="col mt-3 mb-2">
-              <%= submit_tag "Pesquisar", class: "btn btn-primary mt-2" %>
+              <%= submit_tag "Pesquisar", class: "btn-medium-border" %>
             </div>
           <% end %>
       </div>
@@ -39,7 +39,7 @@
               <p><%= "R$ #{treatment.price}"%></p>
             </div>
             <div class="d-flex justify-content-center">
-              <%= link_to "Detalhes", treatment_path(treatment), class: "btn btn-outline-dark rounded-pill" %>
+              <%= link_to "Detalhes", treatment_path(treatment), class: "btn-medium" %>
             </div>
           </div>
         </div>

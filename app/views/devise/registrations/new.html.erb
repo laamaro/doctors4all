@@ -1,32 +1,40 @@
-<h2>Criar conta</h2>
+<div class="appointment-container container py-5 mt-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white form-card p-3 shadow">
+        <h4 class="text-center mt-3">Criar conta</h4>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= f.error_notification %>
 
-  <div class="form-inputs mt-5">
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "first_name" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "last_name" } %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :avatar, as: :file, placeholder:"Image", direct_upload: true, :label => 'Image file:'%>
+          <div class="form-inputs mt-5">
+            <%= f.input :first_name,
+                        required: true,
+                        input_html: { autocomplete: "first_name" }, class: "form-control form-control-lg" %>
+            <%= f.input :last_name,
+                        required: true,
+                        input_html: { autocomplete: "last_name" }, class: "form-control form-control-lg" %>
+            <%= f.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }, class: "form-control form-control-lg"%>
+            <%= f.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" } %>
+            <%= f.input :avatar, as: :file, placeholder:"Image", direct_upload: true, :label => 'Image file:'%>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Sign up", class: "btn-medium mb-3"%>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", class: "btn-primary"%>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
