@@ -24,6 +24,8 @@ class TreatmentsController < ApplicationController
   end
 
   def edit
+    @treatment = Treatment.find(params[:id])
+    @treatment.save
   end
 
   def update
@@ -34,7 +36,6 @@ class TreatmentsController < ApplicationController
 
   def destroy
     @treatment.destroy
-
     redirect_to treatments_path
   end
 
