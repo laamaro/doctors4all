@@ -19,10 +19,7 @@
             <td><%= appointment.date %></td>
             <td><%= appointment.treatment.address %></td>
             <td>
-              <button class="btn-medium">Editar</button>
-            </td>
-            <td>
-              <button class="btn-medium">Deletar</button>
+              <%= link_to "Cancelar", appointment_path(appointment), method: 'DELETE', remote: true, class: "btn-medium" %>
             </td>
           </tr>
         <% end %>
