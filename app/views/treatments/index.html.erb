@@ -22,11 +22,11 @@
             <td><%= treatment.address %></td>
             <td>
               <%# <button class="btn-medium" method="get" action="/treatments/:id/edit">Editar</button> %>
-              <%= link_to "editar", treatment_path(treatment), method: 'EDIT', class: "btn-medium"%>
+              <%= link_to "editar", edit_treatment_path(treatment[:id]), class: "btn-medium"%>
             </td>
             <td>
-              <button class="btn-medium">Deletar</button>
-              <%# <%= link_to "deletar", treatment_path(treatment), method: 'DELETE', remote: true, class: "btn-medium"%>
+              <%# <button class="btn-medium">Deletar</button> %>
+              <%= link_to "deletar", treatment_path(treatment), method: 'DELETE', remote: true, class: "btn-medium" %>
             </td>
           </tr>
         <% end %>

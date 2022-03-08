@@ -24,7 +24,8 @@ class TreatmentsController < ApplicationController
   end
 
   def edit
-    
+    @treatment = Treatment.find(params[:id])
+    @treatment.save
   end
 
   def update
