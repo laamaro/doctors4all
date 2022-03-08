@@ -22,7 +22,7 @@
                   hint: "Insira sua senha para confirmar as alterações",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-      <%= f.input :photo, as: :file, placeholder:"Image", :label => 'Image file:'%>
+      <%= f.input :avatar, as: :file, placeholder:"Image", direct_upload: true, :label => 'Image file:'%>
     </div>
 
     <div class="form-actions mb-4">

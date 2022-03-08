@@ -25,25 +25,25 @@
 
 
 <div class="second-part">
-  <div class="row treatment-flex">
+  <div class="d-flex justify-content-around row treatment-flex">
     <% @treatments.each do |treatment| %>
+      <div class="col-3 my-3">
         <div class="treatment-card">
-          <div class="treatment-card-image" style="background-image: url(<%= treatment.photo.attached? ? cl_image_path(treatment.photo.key) : 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?'%>)"></div>
-          <div class="treatment-card-content">
-            <div class="treatment-card-title">
+          <div class="treatment-card-image" style="background-image: url(<%= treatment.photo.attached? ? cl_image_path(treatment.photo.key) : 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?'%>)"></div>
+          <div class="treatment-card-content p-3">
+            <div class="d-flex justify-content-center treatment-card-title">
               <h4><%= treatment.specialty.capitalize %></h4>
             </div>
-            <div>
+            <div class="m-0">
               <p><%= treatment.address %></p>
-            </div>
-            <div>
               <p><%= "R$ #{treatment.price}"%></p>
             </div>
-            <div>
+            <div class="d-flex justify-content-center">
               <%= link_to "Detalhes", treatment_path(treatment), class: "btn-medium" %>
             </div>
           </div>
         </div>
+      </div>
     <% end %>
   <div style="width: 100%; height: 600px;" data-controller="mapbox" data-mapbox-markers-value="<%= @markers.to_json %>" data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
