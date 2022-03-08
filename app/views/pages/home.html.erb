@@ -29,7 +29,7 @@
     <% @treatments.each do |treatment| %>
       <div class="col-3 my-3">
         <div class="treatment-card">
-          <div class="treatment-card-image" style="background-image: url(<%= treatment.photo.attached? ? cl_image_path(treatment.photo.key) : 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?'%>)"></div>
+          <div class="treatment-card-image" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= treatment.photo.attached? ? cl_image_path(treatment.photo.key) : 'https://images.unsplash.com/photo-1537368910025-700350fe46c7?'%>)"></div>
           <div class="treatment-card-content p-3">
             <div class="d-flex justify-content-center treatment-card-title">
               <h4><%= treatment.specialty.capitalize %></h4>
@@ -39,7 +39,7 @@
               <p><%= "R$ #{treatment.price}"%></p>
             </div>
             <div class="d-flex justify-content-center">
-              <%= link_to "Detalhes", treatment_path(treatment), class: "btn-medium" %>
+              <%= link_to "Detalhes", treatment_path(treatment), class: "btn-medium-branco" %>
             </div>
           </div>
         </div>

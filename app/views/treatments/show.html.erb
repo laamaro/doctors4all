@@ -39,7 +39,7 @@
         <h4 class="text-center m-0">Marque sua consulta! </h4>
           <%= simple_form_for [ @treatment, @appointment ] do |f| %>
             <div class="d-flex flex-row mt-5"><%= f.input :date, label: 'Data:' %></div>
-            <div class="text-center mt-5"><%= f.submit "Marcar consulta", class: "btn-medium" %></div>
+            <div class="text-center mt-5"><%= f.submit "Marcar consulta", class: "btn-medium-branco" %></div>
             <% @appointment.errors&.each do |attr, msg| %>
               <%= msg %>
             <% end %>
@@ -52,6 +52,6 @@
 </div>
 
 <div class="d-flex justify-content-center container m-5">
-    <%= link_to 'Voltar', treatments_path, class: "btn-medium-branco" %>
+    <%# <%= link_to 'Voltar', treatments_path, class: "btn-medium-branco" %>
   <%= link_to 'Procurar mais tratamentos', root_path, class: "btn-medium" %>
 </div>
