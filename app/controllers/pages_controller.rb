@@ -4,7 +4,8 @@ class PagesController < ApplicationController
   def home
     @treatments = Treatment.all
     if params[:specialty]
-      @treatments = @treatments.where(specialty: params[:specialty].downcase)
+      @treatments = @treatments.where(specialty: params[:specialty].capitalize)
+
     end
     @markers = @treatments.geocoded.map do |treatment|
       {

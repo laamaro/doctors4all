@@ -1,8 +1,7 @@
-<div class="appointment-container container">
-  <div class="row">
-    <div class="col-8">
+<div class="d-flex justify-content-around appointment-container container mb-3">
+  <div class="row mt-5">
       <div class="treatment">
-        <table class="table">
+        <table class="table table-striped">
         <tbody>
           <tr>
             <th scope="row">Especialidade</th>
@@ -25,27 +24,33 @@
             <td>De <%= @treatment.start_date %> a <%= @treatment.end_date %></td>
           </tr>
         </tbody>
-        </table>
+       </table>
+     </div>
+  </div>
+  <div class="row">
+    <div class="d-flex flex-column justify-content-around m-3 container mb-0">
+      <% if @treatment.user == current_user %>
+        <%= link_to 'Editar Tratamento',  edit_treatment_path(@treatment), class: 'btn btn-outline-secondary rounded-pill' %>
+        <%= link_to 'Remover Tratamento',  @treatment, method: :delete, class: 'btn btn-outline-danger rounded-pill' %>
+    </div>
+      <% else %>
+    <div class="d-flex justify-content-center align-items-center container">
+      <div class="card-appointment py-5 px-3 shadow">
+        <h4 class="text-center m-0">Marque sua consulta! </h4>
+          <%= simple_form_for [ @treatment, @appointment ] do |f| %>
+            <div class="d-flex flex-row mt-5"><%= f.input :date, label: 'Data:' %></div>
+            <div class="text-center mt-5"><%= f.submit "Marcar consulta", class: "btn btn-outline-secondary rounded-pill" %></div>
+            <% @appointment.errors&.each do |attr, msg| %>
+              <%= msg %>
+            <% end %>
+          <% end %>
       </div>
     </div>
-  </div>
-  <div class="row mt-5">
-    <div class="col-8">
-      <% if @treatment.user == current_user %>
-        <%= link_to 'Editar',  edit_treatment_path(@treatment), class: 'btn btn-outline-secondary' %>
-        <%= link_to 'Remover',  @treatment, method: :delete, class: 'btn btn-outline-danger' %>
-      <% else %>
-        <h5>Marque agora sua consulta: </h5>
-        <%= simple_form_for [ @treatment, @appointment ] do |f| %>
-          <%= f.input :date, label: 'Data' %>
-          <%= f.submit "Marcar consulta", class: "btn btn-outline-secondary" %>
-          <% @appointment.errors&.each do |attr, msg| %>
-            <%= msg %>
-          <% end %>
-        <% end %>
-      <% end %>
+    <% end %>
     </div>
-  <div class="container">
-    <%= link_to 'Voltar', root_path, class: "btn btn-outline-secondary" %>
   </div>
+</div>
+
+<div class="d-flex justify-content-center container m-5">
+  <%= link_to 'Procurar mais tratamentos', root_path, class: "btn btn-outline-secondary" %>
 </div>
