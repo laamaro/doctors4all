@@ -1,4 +1,8 @@
+
 require 'date'
+User.destroy_all
+Appointment.destroy_all
+Treatment.destroy_all
 
 first_names = %w(maria jose joao paulo laura herman michelle andreia paulao pedro)
 last_names = %w(silva santos pieroni passalacqua loosli amaro teste1 teste2 teste3 teste4)
@@ -21,6 +25,7 @@ end
   price: rand(100..500),
   start_date: date,
   end_date: date + 30,
-  user_id: rand(1..10)
+  user: User.all.sample
 )
+puts "Tratamento criado #{i + 1}"
 end
