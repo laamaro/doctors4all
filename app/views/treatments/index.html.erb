@@ -8,7 +8,7 @@
           <tr>
             <th>Especialidade</th>
             <th>Preço</th>
-            <th>Data da consulta</th>
+            <th>Disponibilidade</th>
             <th>Local</th>
             <th>Médico</th>
             <th></th>
@@ -19,14 +19,16 @@
           <tr>
             <td><%= treatment.specialty %></td>
             <td>R$ <%= treatment.price %></td>
-            <td><%= treatment.start_date %></td>
+            <td><%= "De #{treatment.start_date} a #{treatment.end_date}" %></td>
             <td><%= treatment.address %></td>
             <td><%= treatment.user_id %></td>
             <td>
-              <button class="btn-medium">Editar</button>
+              <%# <button class="btn-medium" method="get" action="/treatments/:id/edit">Editar</button> %>
+              <%= link_to "editar", edit_treatment_path(treatment[:id]), class: "btn-medium"%>
             </td>
             <td>
-              <button class="btn-medium">Deletar</button>
+              <%# <button class="btn-medium">Deletar</button> %>
+              <%= link_to "deletar", treatment_path(treatment), method: 'DELETE', remote: true, class: "btn-medium" %>
             </td>
           </tr>
         <% end %>
