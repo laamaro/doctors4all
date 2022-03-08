@@ -3,12 +3,12 @@
     <div class="col-12">
       <div class="treatment_container">
       <h1>Seus tratamentos:</h1>
-      <table class="table table-striped d-flex justify-content-center">
+      <table class="table table-striped justify-content-center">
         <thead>
           <tr>
             <th>Especialidade</th>
             <th>Preço</th>
-            <th>Data da consulta</th>
+            <th>Disponibilidade</th>
             <th>Local</th>
             <th></th>
           </tr>
@@ -18,13 +18,15 @@
           <tr>
             <td><%= treatment.specialty %></td>
             <td>R$ <%= treatment.price %></td>
-            <td><%= treatment.availability %></td>
+            <td><%= "De #{treatment.start_date} a #{treatment.end_date}" %></td>
             <td><%= treatment.address %></td>
             <td>
-              <button class="btn-medium">Editar</button>
+              <%# <button class="btn-medium" method="get" action="/treatments/:id/edit">Editar</button> %>
+              <%= link_to "editar", treatment_path(treatment), method: 'EDIT', class: "btn-medium"%>
             </td>
             <td>
               <button class="btn-medium">Deletar</button>
+              <%# <%= link_to "deletar", treatment_path(treatment), method: 'DELETE', remote: true, class: "btn-medium"%>
             </td>
           </tr>
         <% end %>
