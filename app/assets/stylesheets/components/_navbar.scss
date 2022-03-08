@@ -1,26 +1,18 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background-color: transparent;
+  background-color: rgb(23, 11, 46);
+}
+
+.navbar-transparent {
+  background-color: transparent !important;
   transition: 0.5s background-color ease;
-
-}
-
-.nav-link-white{
-  color: #fff !important;
-}
-
-.nav-link-gray{
-  color: #d0d0d0 !important;
 }
 
 
-.navbar-lewagon-white {
-  background-color: #fff;
-}
+// .nav-link-gray{
+//   color: #d0d0d0 !important;
+// }
 
-.li-navbar-white{
-  color:#fff;
-}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -29,4 +21,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 50px;
 }
- 
+
+.navbar-lewagon-white {
+  background-color: rgb(23, 11, 46) !important;
+  // color: #000;
+}
+
+.nav-item-white{
+  color:#fff;
+}
+
+.nav-item-gray {
+  color: #d0d0d0;
+}

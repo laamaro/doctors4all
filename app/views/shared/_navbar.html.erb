@@ -1,7 +1,7 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top <%="navbar-transparent" if @transparent%>" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
       <%= link_to "#", class: "navbar-brand" do %>
-        <p><%= image_tag "https://www.baitadihospital.gov.np/storage/phpACjFrt.png" %> Doctors4All </p>
+        <p class="text-white" data-action="scroll@window->navbar#updateNavbar" data-navbar-target="p"><%= image_tag "https://www.baitadihospital.gov.np/storage/phpACjFrt.png" %> Doctors4All </p>
       <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,11 +11,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto" data-action="scroll@window->navbar#updateNavbar">
         <% if user_signed_in? %>
-          <li class="nav-item active" data-navbar-target="li">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+          <li class="nav-item active" data-action="scroll@window->navbar#updateNavbar" data-navbar-target="li">
+            <%= link_to "Home", root_path, class: "nav-link text-white" %>
           </li>
-          <li class="nav-item" data-navbar-target="li">
-            <%= link_to "Oferte um Tratamento!", new_treatment_path, class: "nav-link" %>
+          <li class="nav-item" data-action="scroll@window->navbar#updateNavbar" data-navbar-target="li">
+            <%= link_to "Oferte um Tratamento", new_treatment_path, class: "nav-link text-white" %>
           </li>
           <li class="nav-item dropdown">
             <% if current_user.avatar.attached? %>
@@ -36,7 +36,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-white" %>
           </li>
         <% end %>
       </ul>
