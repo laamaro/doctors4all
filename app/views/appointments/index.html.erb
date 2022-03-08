@@ -1,0 +1,34 @@
+<div class="container py-5 mt-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="treatment_container">
+      <h1>Suas Consultas:</h1>
+      <table class="table table-striped justify-content-center">
+        <thead>
+          <tr>
+            <th>Especialidade</th>
+            <th>Data da consulta</th>
+            <th>Local</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @appointments.each do |appointment| %>
+          <tr>
+            <td><%= appointment.treatment.specialty.capitalize %></td>
+            <td><%= appointment.date %></td>
+            <td><%= appointment.treatment.address %></td>
+            <td>
+              <button class="btn-medium">Editar</button>
+            </td>
+            <td>
+              <button class="btn-medium">Deletar</button>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+      </div>
+   </div>
+  </div>
+</div>

@@ -15,9 +15,6 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item" data-navbar-target="li">
-            <%= link_to "Mensagens", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item" data-navbar-target="li">
             <%= link_to "Oferte um Tratamento!", new_treatment_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
@@ -29,6 +26,7 @@
               <% if current_user.treatments.any? %>
               <%= link_to "Seus tratamentos", "/treatments", class: "dropdown-item" %>
               <% end %>
+              <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

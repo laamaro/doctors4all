@@ -10,6 +10,7 @@
             <th>Preço</th>
             <th>Disponibilidade</th>
             <th>Local</th>
+            <th>Médico</th>
             <th></th>
           </tr>
         </thead>
@@ -20,6 +21,7 @@
             <td>R$ <%= treatment.price %></td>
             <td><%= "De #{treatment.start_date} a #{treatment.end_date}" %></td>
             <td><%= treatment.address %></td>
+            <td><%= treatment.user_id %></td>
             <td>
               <%# <button class="btn-medium" method="get" action="/treatments/:id/edit">Editar</button> %>
               <%= link_to "editar", edit_treatment_path(treatment[:id]), class: "btn-medium"%>
